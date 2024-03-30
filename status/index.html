@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-  <head>
-    <title>Staut - Ascraft</title>
-    <link rel="stylesheet" href"css/index.css">
-  </head>
+<head>
+    <title>Statut - Ascraft</title>
+    <link rel="stylesheet" href="css/index.css"> <!-- Correction: ajout du signe "=" après "href" -->
+</head>
 
-  <body>
-    <h1> Vous pourrez trouver ici le statut actuel du serveur !</h1>
+<body>
+    <h1>Vous pourrez trouver ici le statut actuel du serveur !</h1>
     <p id="statusMessage">Statut du serveur</p>
 
-<script>
-// Valeur de la variable status
-var status = 1;
+    <script>
+        // Valeur de la variable status
+        var status = 1;
 
-// Affichage du message en fonction de la valeur de status
-switch(status) {
-    case 1:
-        document.getElementById("statusMessage").innerHTML = "<h1>Serveur fermé</h1>";
-        break;
-    case 2:
-        document.getElementById("statusMessage").innerHTML = "<h1>Serveur en maintenance</h1>";
-        break;
-    case 3:
-        document.getElementById("statusMessage").innerHTML = "<h1>Serveur ouvert</h1>";
-        break;
-    default:
-        document.getElementById("statusMessage").innerHTML = "<h1>Statut non défini</h1>";
-}
+        // Affichage du message en fonction de la valeur de status
+        switch (status) {
+            case 1:
+                document.getElementById("statusMessage").innerHTML = "<h1>Serveur fermé</h1>";
+                break;
+            case 2:
+                document.getElementById("statusMessage").innerHTML = "<h1>Serveur en maintenance</h1>";
+                break;
+            case 3:
+                document.getElementById("statusMessage").innerHTML = "<h1>Serveur ouvert</h1>";
+                break;
+            default:
+                document.getElementById("statusMessage").innerHTML = "<h1>Statut non défini</h1>";
+        }
 
-// Légende pour la valeur de la variable status
-console.log("Valeur de la variable status :");
-console.log("1 - Serveur fermé");
-console.log("2 - Serveur en maintenance");
-console.log("3 - Serveur ouvert");
-</script>
-  </body>
+        // Légende pour la valeur de la variable status
+        console.log("Valeur de la variable status :");
+        console.log("1 - Serveur fermé");
+        console.log("2 - Serveur en maintenance");
+        console.log("3 - Serveur ouvert");
+    </script>
+</body>
+
 </html>
