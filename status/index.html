@@ -12,7 +12,7 @@
 
     <script>
         // Valeur de la variable status
-        var status = 1;
+        var status = 1 ;
 
         // Affichage du message en fonction de la valeur de status
         switch (status) {
@@ -25,15 +25,8 @@
             case 3:
                 document.getElementById("statusMessage").innerHTML = "<h1>Serveur ouvert</h1>";
                 break;
-            default:
-                document.getElementById("statusMessage").innerHTML = "<h1>Statut non défini</h1>";
+            
         }
-
-        // Légende pour la valeur de la variable status
-        console.log("Valeur de la variable status :");
-        console.log("1 - Serveur fermé");
-        console.log("2 - Serveur en maintenance");
-        console.log("3 - Serveur ouvert");
     </script>
 </body>
 
