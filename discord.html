@@ -4,14 +4,16 @@
     <script>
       var maintenance = false;
       var link = true;
+      
       if (maintenance) {
-        window.location.href='maintenance/index.html';
+        window.location.href = 'maintenance/index.html';
       }     
+      
       if (link) {
-        window.location.href='customerrors/001.html';
+        window.location.href = 'customerrors/001.html';
+      } else {
+        window.location.href = '';
       }
-      if not (link) {
-        window.location.href='';
     </script>
   </head>
   <body>
