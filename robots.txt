@@ -1,1 +1,4 @@
-https://mega.nz/file/c6cT0Swb#GINZudSL_oMThMEfFSC_4rTCWz-CSk28pw3edsc5sjU
+disallow : /css/
+disallow : /maintenance/
+disallow : /customerros/
+allow : /patch-notes/
