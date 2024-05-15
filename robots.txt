@@ -1,4 +1,3 @@
-disallow : /css/
-disallow : /maintenance/
-disallow : /customerros/
-allow : /patch-notes/
+User-agent: *
+Disallow: patchnote.html
+Disallow: /assets
