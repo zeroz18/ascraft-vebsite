@@ -33,7 +33,7 @@ function headerShadow() {
 
 /* ----- TYPING EFFECT ----- */
 var typingEffect = new Typed(".typedText",{
-  strings : ["PVP","Faction","Moddé"],
+  strings : ["Patch-Note","Bêta V1"],
   loop : true,
   typeSpeed : 100, 
   backSpeed : 80,
