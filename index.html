@@ -1,169 +1,283 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="shortcut icon" href="assets/images/icon.png" type="image/x-icon">
-    <script defer id="site-behaviour-script" data-secret="03aab7c9-6925-466e-9199-9919892ac066" 
-src="https://sitebehaviour-cdn.fra1.cdn.digitaloceanspaces.com/index.min.js">
-</script>
-    <title>N network</title>
+    <title>N Network - Serveurs de Jeu</title>
+    <style>
+        /* Style global */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Style de la barre de titre */
+        header {
+            background-color: #222;
+            color: #fff;
+            padding: 40px 20px; /* Augmenter la hauteur de la bande de titre */
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Titre N Network déplacé à gauche, en dehors de la barre */
+        header h1 {
+            font-size: 40px;
+            position: absolute;
+            left: 20px;
+            margin: 0;
+            color: #fff;
+        }
+
+        /* Ajout du point gris après N Network */
+        header h1::after {
+            content: '•'; /* Point */
+            position: absolute;
+            bottom: 0; /* Aligné avec le bas du texte */
+            right: -20px; /* Espace entre le texte et le point */
+            font-size: 30px; /* Taille du point */
+            color: #808080; /* Couleur gris du point */
+        }
+
+        /* Style des boutons dans la barre */
+        .button-container {
+            display: flex;
+            justify-content: flex-end; /* Aligner à droite */
+            align-items: center;
+            position: absolute;
+            right: 20px;
+            margin-left: 60px; /* Décalage pour éviter que les textes chevauchent le bouton */
+        }
+
+        .menu {
+            position: relative;
+            margin-left: 10px;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+        }
+
+        .menu a:hover {
+            background-color: #444;
+        }
+
+        /* Cacher les menus par défaut */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 200px;
+            z-index: 1;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+        }
+
+        /* Afficher les menus quand la souris passe dessus */
+        .menu:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Items dans le menu */
+        .dropdown-content li {
+            list-style: none;
+        }
+
+        /* Thème clair */
+        body.light-mode {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header.light-mode {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .button.light-mode {
+            background-color: #4CAF50;
+        }
+
+        /* Thème sombre */
+        body.dark-mode {
+            background-color: #121212;
+            color: #fff;
+        }
+        header.dark-mode {
+            background-color: #fff; /* Fond blanc pour le mode nuit */
+            color: #000; /* Texte noir pour la barre de titre en mode nuit */
+        }
+        header.dark-mode h1 {
+            color: #000; /* Texte noir pour le titre N Network en mode nuit */
+        }
+        .button.dark-mode {
+            background-color: #fff; /* Fond blanc pour le bouton de thème */
+            color: #000; /* Texte noir pour le bouton de thème */
+        }
+
+        /* Style du bouton thème avec icône */
+        .theme-toggle {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 5px;
+        }
+
+        .theme-toggle.light-mode {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .theme-toggle.dark-mode {
+            background-color: #fff;
+            color: #000; /* Texte noir pour le mode nuit */
+        }
+
+        /* Contenu principal */
+        .container {
+            padding: 20px;
+            text-align: left; /* Aligner le texte à gauche */
+            margin-left: 30px; /* Décalage du contenu vers la droite */
+        }
+
+        .server-info {
+            margin: 20px 0;
+        }
+        .server-info h2 {
+            margin-bottom: 10px;
+        }
+
+        /* Description en dehors de la barre */
+        .description {
+            text-align: left;
+            padding-left: 20px;
+            margin-top: 5px;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        /* Style des menus Minecraft et Garry's mod */
+        .menu a {
+            color: #fff; /* Couleur des liens dans le menu */
+        }
+
+        /* En mode sombre, les liens deviennent noirs */
+        body.dark-mode .menu a {
+            color: #000;
+        }
+
+        /* En mode sombre, les menus deviennent plus clairs */
+        body.dark-mode .dropdown-content {
+            background-color: #eee;
+        }
+
+        /* En mode sombre, les items du menu deviennent noirs */
+        body.dark-mode .dropdown-content li {
+            color: #000;
+        }
+
+    </style>
 </head>
-<body>
-   <div class="container">
-      <nav id="header">
-        <div class="nav-logo">
-            <p class="nav-name">N network</p>
-            <span>.</span>
-        </div>
-        <div class="nav-menu" id="myNavMenu">
-            <ul class="nav_menu_list">
-                <li class="nav_list">
-                    <a href="#home" class="nav-link active-link">Menu</a>
-                    <div class="circle"></div>
-                </li>
-                <li class="nav_list">
-                    <a href="#about" class="nav-link">Informations</a>
-                    <div class="circle"></div>
-                </li>
-                <li class="nav_list">
-                    <a href="#stats" class="nav-link">Statistiques</a>
-                    <div class="circle"></div>
-                </li>
-                <li class="nav_list">
-                    <a href="patch-note/index.html" class="nav-link">Patch-Notes</a>
-                    <div class="circle"></div>
-                </li>
-            </ul>
-        </div>       
-            <div class="nav-menu-btn">
-            <i class="uil uil-bars" style="cursor: pointer;"></i>
-        </div>
-      </nav>
-    <main class="wrapper">
-       <section class="featured-box" id="home">
-          <div class="featured-text">
-            <div class="featured-text-card">
-                <span>N network</span>
-            </div>
-            <div class="featured-name">
-                <p>Un serveur : <span class="typedText"></span></p>
-            </div>
-            <div class="featured-text-info">
-                <p>N network est un serveur PVP faction Moddé créé par NytrixFM en 2023
-                </p>
-            </div>
-            <div class="featured-text-btn">
-                <button class="btn" onclick="window.location.href = '#about';">Règlement</button>
-                <button class="btn" tartget="_blank" onclick="window.location.href = 'https://discord.gg/Hup9t3C3Mj';">Discord</button>
-            </div>
-          </div>
-          <div class="featured-image">
-            <div class="image">
-                <img src="assets/images/avatar.png" alt="avatar">
-            </div>
-          </div>
-          <div class="scroll-icon-box">
-            <a href="#about" class="scroll-btn">
-                <i class="uil uil-mouse-alt"></i>
-                <p>Scroll</p>
-            </a>
-          </div>
-       </section>
-       <section class="section" id="about">
-          <div class="top-header">
-            <h1>Informations</h1>           
-          </div>
-          <div class="row">
-            <div >
-                <div class="about-info">
-                    <h3>Règlement Officiel</h3>
-                    <p>À respecter obligatoirement !</p>
-                    <p> I : Règles du chat <br>
-                        Merci de rester poli et respectieux dans le chat , si vous avez besoin d'aide merci d'ouvrir un tiket sur le discord au mieux de demander sur le chat si 
-                        ca ne peux pas être réglé IG <br>
- <br>
-                        II : Bannissements : <br>
-                        Les bannisements peuvent pas être révolqués. Après un ban temporaire vos home et votre stuff seronts reset. <br>
- <br>
-                        III : Minage : <br>
-                        Merci de ne pas utiliser de X-ray sur ascraft. Toute forme d'X-ray entrainera un moov discord et un ban de 30j puis definitif si vous recommancez. <br>
- <br>
-                        IV : PVP : <br>
-                        Toute forme de cheat pendant les events pvp sera sanctionné d'un banissement definitif et hors events pvp d'un ban de 60j puis definitif si vous recommancez. <br>
- <br>
-                        V : Faction : <br>
-                        Merci de faire des bases par dessus la bedrock. Si une base est retrouvée sous la bedrock elle sera clear.
-                    </p>
-                    <br>
-                </div>
-                 <br>
-                <div class="about-info">
-                    <h3>Notre équipe</h3>
-                    <p> Créateur : <br>
-                        zeroz18_off <br>
-                         <br>
-                        Administrateurs :  <br>
-                        - Aubninclem <br>
- <br>
-                        Modérateurs <br>
-                        - Cal2cave <br>
- <br>
-                        Développeurs : <br>
-                        - zeroz18_off <br>
-                    </p>
-                    <br>
+<body class="light-mode">
+    <header>
+        <h1>N Network</h1>
+        
+        <!-- Conteneur des boutons à droite -->
+        <div class="button-container">
+            <!-- Menu Minecraft -->
+            <div class="menu">
+                <a href="#">Minecraft</a>
+                <div class="dropdown-content">
+                    <ul>
+                        <li>Survie et PVP Faction Moddé</li>
+                    </ul>
                 </div>
             </div>
-          </div>
-       </section>
-       <section class="section" id="stats">
-          <div class="top-header">
-              <h1>Statistiques</h1>
-          </div>
-          <div class="project-container">
-            <div class="project-box">
-                <i class="uil uil-users-alt"></i>
-                <h3>Développeurs</h3>
-                <label>1 développeur</label>
+
+            <!-- Menu Garry's Mod -->
+            <div class="menu">
+                <a href="#">Garry's Mod</a>
+                <div class="dropdown-content">
+                    <ul>
+                        <li>Serveur RF</li>
+                        <li>Serveur Sandbox</li>
+                    </ul>
+                </div>
             </div>
-            <div class="project-box">
-                <i class="uil uil-briefcase-alt"></i>
-                <h3>Joueurs uniques</h3>
-                <label>3 joueurs</label>
-            </div>
-            <div class="project-box">
-                <i class="uil uil-award"></i>
-                <h3>Version actuelle</h3>
-                <label> Minecraft 1.19.2 et N network V1.0 bêta</label>
-            </div>
-          </div>
-       </section>
-        <div class="top-footer">
-            <p>N network .</p>
+
+            <!-- Bouton Jour/Nuit -->
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
         </div>
-        <div class="middle-footer">
-            <ul class="footer-menu">
-                <li class="footer_menu_list">
-                    <a href="#home">Menu</a>
-                </li>
-                <li class="footer_menu_list">
-                    <a href="#about">Informations</a>
-                </li>
-                <li class="footer_menu_list">
-                    <a href="#stats">Statistiques</a>
-                </li>
-            </ul>
-        </div>
-        <div class="bottom-footer">
-            <p>Copyright &copy; <a href="#home" style="text-decoration: none;">N network</a> - Tous droits réservés</p>
-        </div>
-    </footer>
+    </header>
+
+    <div class="description">
+        Créé en 2024 par NytrixFM
     </div>
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="assets/js/main.js"></script>
+
+    <div class="container">
+        <h2>Bienvenue sur N Network</h2>
+        <p>Un réseau de serveurs de jeux offrant des expériences variées !</p>
+
+        <div class="server-info">
+            <h2>Serveurs Minecraft</h2>
+            <ul>
+                <li>Survie et PVP Faction Moddé</li>
+            </ul>
+        </div>
+
+        <div class="server-info">
+            <h2>Serveurs Garry's Mod</h2>
+            <ul>
+                <li>Serveur RF</li>
+                <li>Serveur Sandbox</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const header = document.querySelector('header');
+            const button = document.querySelector('.theme-toggle');
+            const menus = document.querySelectorAll('.menu a');
+            const dropdowns = document.querySelectorAll('.dropdown-content');
+
+            // Bascule entre les thèmes
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
+            header.classList.toggle('dark-mode');
+            header.classList.toggle('light-mode');
+            button.classList.toggle('dark-mode');
+            button.classList.toggle('light-mode');
+
+            // Change l'icône du bouton en fonction du thème
+            if (body.classList.contains('dark-mode')) {
+                button.textContent = '🌞'; // Soleil pour mode sombre
+            } else {
+                button.textContent = '🌙'; // Lune pour mode clair
+            }
+
+            // Ajuster les couleurs des menus
+            menus.forEach(menu => {
+                menu.style.color = body.classList.contains('dark-mode') ? '#000' : '#fff';
+            });
+
+            dropdowns.forEach(dropdown => {
+                dropdown.style.backgroundColor = body.classList.contains('dark-mode') ? '#eee' : '#333';
+                const items = dropdown.querySelectorAll('li');
+                items.forEach(item => {
+                    item.style.color = body.classList.contains('dark-mode') ? '#000' : '#fff';
+                });
+            });
+        }
+    </script>
 </body>
 </html>
