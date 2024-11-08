@@ -14,4 +14,4 @@ Bienvenue sur le dépot GitHub officiel du site intenet d'Ascraft-MC
 
 *V1.0 : Site complètement refait. MA sortie le 15/05/2024 a 16:20 heure francaise*
 
-*V2.0 : refonte complete du site. Changement du nom et direction vers plusieurs serveurs de jeu.* **MAJ sortie le 08/11/2024 22:50**
+*V2.0 : refonte complete du site. Changement du nom et direction vers plusieurs serveurs de jeu.* **MAJ sortie le 08/11/2024 22:50 UTC+1**
