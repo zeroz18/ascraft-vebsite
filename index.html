@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <script type="text/javascript">
+      (
+        function() {
+          var sbSiteSecret = "03aab7c9-6925-466e-9199-9919892ac066";
+          window.sitebehaviourTrackingSecret = sbSiteSecret;
+          var scriptElement = document.createElement('script');
+          scriptElement.async = true;
+          scriptElement.id = "site-behaviour-script-v2";
+          scriptElement.src = "https://sitebehaviour-cdn.fra1.cdn.digitaloceanspaces.com/index.min.js?sitebehaviour-secret=" + sbSiteSecret;
+          document.head.appendChild(scriptElement); 
+        }
+      )()
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>N Network - Serveurs de Jeu</title>
